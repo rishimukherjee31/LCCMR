@@ -90,7 +90,7 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
   <p><em>JAR JAR ROV Disassembled Frame</em></p>
 </div>
 
-> The sensing pod and its sensors are not required for the barication process.
+> The sensing pod and its sensors are not required for the fabrication process.
 <br>
 <br>
 
