@@ -92,7 +92,6 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
 
 > The sensing pod and its sensors are not required for the fabrication process.
 <br>
-<br>
 
 #### Fabricated Parts List
 
