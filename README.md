@@ -4,7 +4,7 @@ The ROV has two main components to it: the electronics, the frame and thruster k
 
 ## Frame Fabrication and Assembly Guide
 <div align="center">
-  <img src="./images/image-2.png" width="85%" alt="JAR JAR ROV Complete Frame">
+  <img src="./images/image-2.png" width="95%" alt="JAR JAR ROV Complete Frame">
   <p><em>JAR JAR ROV Complete Frame</em></p>
 </div>
 
