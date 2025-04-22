@@ -96,14 +96,14 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
 
 #### Fabricated Parts List
 
-| Quantity | Component | Description | Function |
+| Quantity | Component | Size | Function |
 |:--------:|-----------|-------------|----------|
-| 8 | Long horizontal pipes | - | Frame lengthwise beams |
-| 3 | Medium vertical pipes | Standard length | Vertical pillars |
-| 2 | Short horizontal pipes | Standard length | Frame breadthwise beams |
-| 11 | Very short horizontal pipes | Standard length | Connecting pieces |
-| 11 | Tee connectors | Standard length | Connectors-tee |
-| 4 | Elbow Connectors | Standard length | Connectors-elbow |
+| 8 | Long horizontal pipes | 200 mm | Frame lengthwise beams |
+| 3 | Medium vertical pipes | 150 mm | Vertical pillars |
+| 2 | Short horizontal pipes | 100 mm | Frame breadthwise beams |
+| 11 | Very short horizontal pipes | 40 mm | Connecting pieces |
+| 11 | Tee connectors | 1/2" Tees | Connectors-tee |
+| 4 | Elbow Connectors | 1/2" 4-way Elbow | Connectors-elbow |
 | 1 | Sea Mate Angelfish ROV Thruster kit | - | Sea Mate thrusters |
 
 <br>
