@@ -120,6 +120,13 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 
 <img src="./images/long-horizontal.png" width="600" alt="Long horizontal pipes">
 
+### Connectors
+*Elbows + Tees*
+
+<img src="./images/connectors.png" width="600" alt="Tee connectors">
+
+> Note: Once you attach a pipe to a connector, make sure to hammer it in place with a rubber mallet. 
+
 ### Medium Vertical Pipes (3)
 *Vertical pillars*
 
@@ -134,13 +141,6 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 *Connecting pieces*
 
 <img src="./images/short.png" width="600" alt="Very short horizontal pipes">
-
-### Connectors
-*Elbows + Tees*
-
-<img src="./images/connectors.png" width="600" alt="Tee connectors">
-
-> Note: Once you attach a pipe to a connector, make sure to hammer it in place with a rubber mallet. 
 
 ### Propulsion
 
