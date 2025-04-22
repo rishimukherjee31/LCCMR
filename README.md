@@ -45,7 +45,7 @@ The ROV has two main components to it: the electronics, the frame and thruster k
 
 > You need either a band saw or a PVC pipe cutter. You can use a hack saw, but it takes more effort and is more time consuming.
 
-### 1. Raw Materials:
+### 2. Raw Materials:
 
 <table align="left-center">
   <tr>
