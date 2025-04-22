@@ -1,6 +1,6 @@
 # Frame Fabrication and Assembly Guide
 
-The ROV has two main components to it: the electronics, the frame + thruster kit. We are using the Sea Mate Angelfish kit, which comes with a set of thrusters, cabling, and a control box. Let us begin by creating the frame first. 
+The ROV has two main components to it: the electronics, the frame + thruster kit. We are using the Sea Mate Angelfish ROV kit, which comes with a set of thrusters, cables, and a control box. Begin by creating the frame. 
 
 <div align="center">
   <img src="./images/image-2.png" width="90%" alt="JAR JAR ROV Complete Frame">
@@ -111,7 +111,7 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
 
 ## Assembly Guide
 
-You need to build the thruster joint for the Sea Mate ROV. It is reccomended to build the entire ROV electronics before starting the final assembly. Once all the parts are fabricated, you can start assembling the frame as shown below. Use the images below as a guide to assembling the ROV frame. All of the parts are highlighted in their respective final positions. 
+You need to build the thruster joint for the Sea Mate ROV. It is reccomended to build the entire ROV electronics before starting the final assembly. Once all the parts are fabricated, you can start assembling the frame as shown below. Use the images as a guide to assembling the ROV frame. All of the parts are highlighted in their respective final positions. 
 
 <br>
 
@@ -158,4 +158,4 @@ Make sure there are no bends in the frame. You can now attach the ballast (pool 
   <p><em>JAR JAR ROV in the Pool</em></p>
 </div>
 
-> When you attach the ballast sure that the sensor pod is attacheg to the side closer to the surface.
+> When you attach the ballast, make sure that the sensor pod is attached to the side closer to the surface.
