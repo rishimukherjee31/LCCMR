@@ -15,33 +15,25 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
 
 ### 1. Required Tools:
 
-<table align="left-center">
+<table align="center">
   <tr>
-    <th>Tool</th>
-    <th>Image</th>
+    <th>Band Saw</th>
+    <th>PVC Pipe Cutter</th>
+    <th>Rubber Mallet</th>
+    <th>Measuring Tape</th>
+    <th>Cutter</th>
   </tr>
   <tr>
-    <td>Band Saw</td>
-    <td><img src="./images/band-saw.png" width="100" height="100" alt="band saw"></td>
-  </tr>
-  <tr>
-    <td>PVC Pipe Cutter</td>
-    <td><img src="./images/pipe-cutter.png" width="100" height="100" alt="pipe cutter"></td>
-  </tr>
-  <tr>
-    <td>Rubber Mallet</td>
-    <td><img src="./images/mallet.png" width="100" height="100" alt="rubber mallet"></td>
-  </tr>
-  <tr>
-    <td>Measuring Tape</td>
-    <td><img src="./images/tape-measure.png" width="100" height="100" alt="measuring tape"></td>
-  </tr>
-  <tr>
-    <td>Cutter</td>
-    <td><img src="./images/blade.png" width="100" height="100" alt="bladed cutter"></td>
+    <td><img src="./images/band-saw.png" width="120" height="120" alt="band saw"></td>
+    <td><img src="./images/pipe-cutter.png" width="120" height="120" alt="pipe cutter"></td>
+    <td><img src="./images/mallet.png" width="120" height="120" alt="rubber mallet"></td>
+    <td><img src="./images/tape-measure.png" width="120" height="120" alt="measuring tape"></td>
+    <td><img src="./images/blade.png" width="120" height="120" alt="bladed cutter"></td>
   </tr>
 </table>
 <br>
+
+
 
 > You need either a band saw or a PVC pipe cutter. You can use a hack saw, but it takes more effort and is more time consuming.
 
