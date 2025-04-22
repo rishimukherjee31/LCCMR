@@ -1,8 +1,7 @@
-# Water-Quality-Project
+# Frame Fabrication and Assembly Guide
 
 The ROV has two main components to it: the electronics, the frame and thruster kit. We are using the Sea Mate Angelfish kit, which comes with a set of thrusters, cabling, and a control box. Let us begin by creating the frame first. 
 
-## Frame Fabrication and Assembly Guide
 <div align="center">
   <img src="./images/image-2.png" width="95%" alt="JAR JAR ROV Complete Frame">
   <p><em>JAR JAR ROV Complete Frame</em></p>
