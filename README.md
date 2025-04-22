@@ -38,7 +38,7 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
   </tr>
 </table>
 
-> You need either a band saw or a PVC pipe cutter. You can use a hack saw, but it takes more effort and is more time consuming.
+> You need either a band saw or a PVC pipe cutter. You can use a hack saw too, but it takes more effort and is more time consuming. When cutting pipes, make sure to account for the kerf. Kerf refers the thickness of the blade in the material. This thickness of material is lost. This problem is more obvious when using saws. 
 
 <br>
 
