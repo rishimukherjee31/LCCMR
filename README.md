@@ -3,11 +3,7 @@
 The ROV has two main components to it: the frame, the electronics and thruster kit. We are using the Sea Mate Angelfish kit, which comes with a set of thrusters, cabling, and a control box. Let us begin by creating the frame first. 
 
 ## Frame Fabrication and Assembly Guide
-
-# JAR JAR ROV Frame Assembly Guide
-
-<!-- Header Image: Add your ROV complete frame image here -->
-![JAR JAR ROV Complete Frame](images/Final-Frame-Drawing.png)
+![JAR JAR ROV Complete Frame](./images/Final-Frame-Drawing.png)
 
 Welcome to the assembly guide for your LCCMR IRV LAB JAR JAR ROV frame! This guide will walk you through each step of assembling your ROV frame using PVC SCH 40 materials.
 
