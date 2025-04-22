@@ -6,8 +6,14 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
   <img src="./images/image-2.png" width="90%" alt="JAR JAR ROV Complete Frame">
   <p><em>JAR JAR ROV Complete Frame</em></p>
 </div>
-
 <br>
+
+## Quick Navigation
+
+- [Parts List](#parts-list)
+- [Fabrication Guide](#fabrication-guide)
+- [Assembly Guide](#assembly-guide)
+- [Ballasting](#ballasting)
 
 <br>
 
@@ -73,7 +79,7 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
 
 <br>
 
-## Fabrication  Guide
+## Fabrication Guide
 
 The disassembled frame can be seen below. We need to fabricate these parts from our materials before we can assemble the frame. It is reccomended to start with the 1/2" pipe. Once the pipe pieces are cut, we can start assembling the frame. Some of the parts are from the Sea Mate Angelfish ROV kit. Those parts are essential to assembling the frame. They are not necessary in the fabrication process for the frame. The Sensor kit is also not necessary at this stage. 
 
@@ -88,7 +94,7 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
 <br>
 <br>
 
-#### Parts List
+#### Fabricated Parts List
 
 | Quantity | Component | Description | Function |
 |:--------:|-----------|-------------|----------|
@@ -129,8 +135,6 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 
 <img src="./images/short.png" width="600" alt="Very short horizontal pipes">
 
-## Connectors
-
 ### Connectors
 *Elbows + Tees*
 
@@ -138,7 +142,7 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 
 > Note: Once you attach a pipe to a connector, make sure to hammer it in place with a rubber mallet. 
 
-## Propulsion
+### Propulsion
 
 *Sea Mate Angelfish ROV Thruster Kit*
 
@@ -155,4 +159,3 @@ Make sure there are no bends in the frame. You can now attach the ballast (pool 
 </div>
 
 > When you attach the ballast sure that the sensor pod is attacheg to the side closer to the surface.
-
