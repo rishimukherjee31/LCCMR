@@ -8,7 +8,7 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
 </div>
 <br>
 
-## Quick Navigation
+## Quick Links
 
 - [Parts List](#parts-list)
 - [Fabrication Guide](#fabrication-guide)
