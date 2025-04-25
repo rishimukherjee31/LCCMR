@@ -3,7 +3,7 @@
 The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC tube that is cut. It contains the electronics. It is reccomended to build the internal electronics before building the housing.  
 
 <div align="center">
-  <img src="./images/image-4.png" width="90%" alt="JAR JAR ROV Complete Frame">
+  <img src="./images/image-4.png" width="90%" alt="Water Quality Module Housing">
   <p><em>Water Quality Module Housing</em></p>
 </div>
 <br>
@@ -50,14 +50,14 @@ The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC 
     <th>Picture</th>
   </tr>
   <tr>
-    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-1-2-in-PVC-Schedule-40-S-x-S-x-S-Tee-PVC024000600HD/203812195">1/2" PVC Tee</a></td>
-    <td align="center">11</td>
-    <td><img src="./images/pvc-tee.png" width="100" height="100" alt="1/2&quot; PVC Tee"></td>
+    <td><a href="https://www.homedepot.com/p/NDS-PVC-S-D-Cap-4-in-4P06/100172701">2" PVC End Cap</a></td>
+    <td align="center">1</td>
+    <td><img src="./images/pvc-end-cap.png" width="100" height="100" alt="1/2&quot; PVC Tee"></td>
   </tr>
   <tr>
-    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-1-2-in-x-10-ft-PVC-Schedule-40-Plain-End-Pipe-PVC-04005-0600/100348471">1/2"x10' PVC pipe</a></td>
+    <td><a href="https://www.homedepot.com/p/NIBCO-4-in-PVC-DWV-Street-Spigot-x-FIPT-Female-Adapter-C48032HD4/100677982">2" PVC Adapter</a></td>
     <td align="center">1</td>
-    <td><img src="./images/1in-pipe.png" width="100" height="100" alt="1/2&quot;x10' PVC pipe"></td>
+    <td><img src="./images/pvc-adapter.png" width="100" height="100" alt="1/2&quot;x10' PVC pipe"></td>
   </tr>
   <tr>
     <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-2-in-x-2-ft-PVC-DWV-Schedule-40-Pipe-PVC072000200HA/100585960">2" PVC Pipe, 2 ft.</a></td>
@@ -65,14 +65,14 @@ The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC 
     <td><img src="./images/4in-pipe.png" width="100" height="100" alt="2&quot; PVC Pipe"></td>
   </tr>
   <tr>
-    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-1-2-in-PVC-Side-Outlet-90-Degree-S-x-S-x-S-Elbow-Fitting-PVC025100600HD/300335067">1/2" PVC 4-way Elbow</a></td>
+    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-2-in-PVC-Schedule-40-S-x-S-Coupling-PVC021001600HD/203811391?MERCH=REC-_-fbt_test-_-203811678-_-1-_-n/a-_-n/a-_-n/a-_-n/a-_-n/a">2” PVC Coupler</a></td>
     <td align="center">4</td>
-    <td><img src="./images/4-way-elbow.png" width="100" height="100" alt="1/2&quot; PVC 4-way"></td>
+    <td><img src="./images/pvc-coupler.png" width="100" height="100" alt="1/2&quot; PVC 4-way"></td>
   </tr>
   <tr>
-    <td><a href="https://www.walmart.com/ip/Hollow-Swimming-Rod-Hollow-Foam-Pool-Noodles-P8C8/5796385463?classType=VARIANT&athbdg=L1400&selectedSellerId=101664769">Pool Noodle</a></td>
+    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-2-in-PVC-DWV-Cleanout-Plug-PVC001060800HD/203391575">2" PVC Plug</a></td>
     <td align="center">1</td>
-    <td><img src="./images/pool-noodle.png" width="100" height="100" alt="Pool Noodle"></td>
+    <td><img src="./images/plug.png" width="100" height="100" alt="Pool Noodle"></td>
   </tr>
 </table>
 
@@ -80,13 +80,14 @@ The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC 
 
 ## Fabrication Guide
 
-The disassembled frame can be seen below. We need to fabricate these parts from our materials before we can assemble the frame. It is reccomended to start with the 1/2" pipe. Once the pipe pieces are cut, we can start assembling the frame. Some of the parts are from the Sea Mate Angelfish ROV kit. Those parts are essential to assembling the frame. They are not necessary in the fabrication process for the frame. The Sensor kit is also not necessary at this stage. 
+The dissambled water quality module housing can be seen in the image below. As you can tell, the PVC pipe needs to be cut to size. All of the other parts are available off the shelf
+and need to be assembled with PVC cement. The end cap needs to be drilled to accomodate the connectors. It is reccomended to build the epoxied connections prior to building this module. 
 
 <br>
 
 <div align="center">
-  <img src="./images/image-5.png" width="85%" alt="JAR JAR ROV Complete Frame">
-  <p><em>JAR JAR ROV Disassembled Frame</em></p>
+  <img src="./images/image-5.png" width="85%" alt="Water Quality Module Disaasembled">
+  <p><em>Water Quality Module Disassembled</em></p>
 </div>
 
 <br>
@@ -95,13 +96,11 @@ The disassembled frame can be seen below. We need to fabricate these parts from 
 
 | Quantity | Component | Size | Function |
 |:--------:|-----------|-------------|----------|
-| 8 | Long horizontal pipes | 200 mm | Frame lengthwise beams |
-| 3 | Medium vertical pipes | 150 mm | Vertical pillars |
-| 2 | Short horizontal pipes | 100 mm | Frame breadthwise beams |
-| 11 | Very short horizontal pipes | 40 mm | Connecting pieces |
-| 11 | Tee connectors | 1/2" Tees | Connectors-tee |
-| 4 | Elbow Connectors | 1/2" 4-way Elbow | Connectors-elbow |
-| 1 | Sea Mate Angelfish ROV Thruster kit | - | Sea Mate thrusters |
+| 1 | Long housing pipe | 230 mm | Main housing chasis |
+| 1 | PVC End Cap | 2" | End Cap |
+| 1 | PVC Coupler | 2" | Coupler |
+| 1 | PVC Plug | 2" | Plug |
+| 1 | PVC Adapter | 2" | Adapter |
 
 <br>
 
@@ -112,47 +111,35 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 
 <br>
 
-### Long Horizontal Pipes (8)
-*Frame lengthwise beams*
+### Penetrators
+*The penetrators need to be attached to the back of the first end cap. Do this before assembling the sensor pod.*
 
-<img src="./images/long-horizontal.png" width="600" alt="Long horizontal pipes">
+<img src="./images/WQM-connectors.png" width="600" alt="Very short horizontal pipes">
 
-### Connectors
-*Elbows + Tees*
+### Long Housing Pipe (1)
+*Main housing chasis*
 
-<img src="./images/connectors.png" width="600" alt="Tee connectors">
+<img src="./images/PCV-tube.png" width="600" alt="Long horizontal pipes">
+
+### Assembly Step 1
+*With pvc cement, attach the end cap to one side and the coupler to the other side of the tube*
+
+<img src="./images/WQM-caps.png" width="600" alt="Tee connectors">
 
 > Note: Once you attach a pipe to a connector, make sure to hammer it in place with a rubber mallet. 
 
-### Medium Vertical Pipes (3)
-*Vertical pillars*
+### Assembly Step 2
+*Attach the adapter using pvc cement.*
 
-<img src="./images/vertical.png" width="600" alt="Medium vertical pipes">
+<img src="./images/WQM-adapter.png" width="600" alt="Medium vertical pipes">
 
-### Short Horizontal Pipes (2)
-*Frame breadthwise beams*
+### Assembly Step 3 
+*Screw in plug with electrical tape arounf the threads.*
 
-<img src="images/short-horizontal.png" width="600" alt="Short horizontal pipes">
+<img src="images/WQM-screw.png" width="600" alt="Short horizontal pipes">
 
-### Very Short Horizontal Pipes (11)
-*Connecting pieces*
+### Assemble Step 4
+*Attach the Sensor Pod to the top of the frame away from the thrusters.*
 
-<img src="./images/short.png" width="600" alt="Very short horizontal pipes">
+<img src="images/WQM-assembled.png" width="600" alt="Short horizontal pipes">
 
-### Propulsion
-
-*Sea Mate Angelfish ROV Thruster Kit*
-
-<img src="./images/ROV-parts.png" width="800" alt="Sea Mate Angelfish ROV Thruster kit">
-
-<br>
-
-## Ballasting
-Make sure there are no bends in the frame. You can now attach the ballast (pool noodle pieces) and the sensor pod. Use the following image as a guide. Adjust the ballast accordingly.
-
-<div align="center">
-  <img src="./images/pool3.png" width="800" alt="Jar Jar ROV">
-  <p><em>JAR JAR ROV in the Pool</em></p>
-</div>
-
-> When you attach the ballast, make sure that the sensor pod is attached to the side closer to the surface.
