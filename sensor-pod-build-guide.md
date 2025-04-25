@@ -37,7 +37,7 @@ The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC 
 </table>
 
 > The fabrication process is not too involved for this module. Most of the parts are available individually off the shelf. The fabrication involves cutting the main 2" pipe to size.
-> The assembly includes using PVC cement to glue fix the caps in place. 
+> The assembly includes using PVC cement to glue the caps in place. 
 
 <br>
 
@@ -80,8 +80,7 @@ The sensor pod housing is made of PVC material SCH40. The main tube is a 2" PVC 
 
 ## Fabrication Guide
 
-The dissambled water quality module housing can be seen in the image below. As you can tell, the PVC pipe needs to be cut to size. All of the other parts are available off the shelf
-and need to be assembled with PVC cement. The end cap needs to be drilled to accomodate the connectors. It is reccomended to build the epoxied connections prior to building this module. 
+The disassemmbled water quality module housing can be seen in the image below. As you can tell, the PVC pipe needs to be cut to size. All of the other parts are available off the shelf and need to be assembled with PVC cement. The end cap needs to be drilled to accommodate the connectors. It is recommended to build the epoxied connections prior to building this module. 
 
 <br>
 
@@ -116,8 +115,8 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 
 <img src="./images/WQM-connectors.png" width="600" alt="Very short horizontal pipes">
 
-### Long Housing Pipe (1)
-*Main housing chasis*
+### Long Housing Pipe 
+*Main housing chassis.*
 
 <img src="./images/PCV-tube.png" width="600" alt="Long horizontal pipes">
 
@@ -134,7 +133,7 @@ You need to build the thruster joint for the Sea Mate ROV. It is reccomended to 
 <img src="./images/WQM-adapter.png" width="600" alt="Medium vertical pipes">
 
 ### Assembly Step 3 
-*Screw in plug with electrical tape arounf the threads.*
+*Screw in plug with electrical tape around the threads.*
 
 <img src="images/WQM-screw.png" width="600" alt="Short horizontal pipes">
 
