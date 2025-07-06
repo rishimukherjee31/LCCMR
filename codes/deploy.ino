@@ -12,6 +12,8 @@
 
 #include <queue>
 
+#define DEFAULT_SAT_VOLTAGE_CONST (40.0*11.0)
+
 const int SD_CS_PIN = D5;
 
 #ifndef F_CPU
@@ -57,9 +59,11 @@ float ph = -1;
 float temperature = -1;
 float dissolvedOxygen = -1;
 float turbidity = -1;
+float turbidity_ntu = -1;
 float Vclear = 2.85; // Calibration constant for turbidity sensor
 float latitude = 0.0;  // Default GPS value
 float longitude = 0.0; // Default GPS value
+float ph_calibration = 15.509 + 9.0; // Calibration constant for pH sensor.
 
 // Update the initializeSDCard function with better error reporting
 bool initializeSDCard() {
@@ -271,42 +275,53 @@ bool sendData(int loopTime) {
 void readSensors() {
     // Read pH sensor (now on A0)
     float phVolts = (analogRead(A0)/4095.0) * 3.3;
-    ph = (-5.6548 * phVolts) + 15.509; // add calibration constant
+    ph = (-5.6548 * phVolts) + ph_calibration; // add calibration constant
     q_p.push(ph);
     
     // Read temperature sensor (now analog on A1)
     float tempVolts = (analogRead(A1)/4095.0) * 3.3;
     
-    temperature = tempVolts * 100.0 - 110; // add or subtract calibration constant once values have settled
+    temperature = tempVolts * 100.0 - 107; // add or subtract calibration constant once values have settled
     q_t.push(temperature);
     
     // Read dissolved oxygen sensor on A2
+    float doVolts = analogRead(A2);// / 4095.0) * 3300.0 + 130;
     
-    float doVolts = (analogRead(A2)/4095.0) * 3.3;
-    //dissolvedOxygen = doVolts * 3.0;
+    Particle.publish("do volts", doVolts);
     
-    dissolvedOxygen = (doVolts - 0.4) * 10.0; // Approximate conversion
+    dissolvedOxygen = doVolts* 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
+    //Particle.publish("%d",dissolvedOxygen);
 
     // Temperature compensation (DO decreases with increasing temperature)
     float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
+    
+    
     dissolvedOxygen = dissolvedOxygen * tempFactor;
     
     // Ensure reasonable bounds (typical range 0-20 mg/L)
     if (dissolvedOxygen < 0) dissolvedOxygen = 0;
-    if (dissolvedOxygen > 25) dissolvedOxygen = 25;
+    //if (dissolvedOxygen > 25) dissolvedOxygen = 25;
     
     q_do.push(dissolvedOxygen);
     
     // Read Turbidity sensor on A3
-    float turbVolts = (analogRead(A3)/4095.0) * 3.3;
+    float actualVolts = 1.0 + (analogRead(A3)) * (3.3 / 4095.0);  // Actual voltage from sensor
+
+    // Scale to 5V equivalent for DFRobot formula
+    float scaledVolts = actualVolts * (5.0 / 3.3);
     
-    // Turbidity as a percentage (0% = clear water, 100% = fully opaque)
-    turbidity = 100.0 - (turbVolts/Vclear)*100.0;
+    // DFRobot quadratic formula for NTU conversion
+    float turbidity_ntu = -1120.4 * scaledVolts * scaledVolts + 5742.3 * scaledVolts - 4352.9;
     
-    // Ensure turbidity stays within 0-100% range
-    if (turbidity < 0) turbidity = 0;
-    if (turbidity > 100) turbidity = 100;
-    q_turb.push(turbidity);
+    // Handle edge cases
+    if (turbidity_ntu < 0) turbidity_ntu = 0;
+    if (turbidity_ntu > 3000) turbidity_ntu = 3000;
+    
+    // Publish both values for monitoring
+    String turbidityData = String::format("{\"voltage\":%.2f,\"ntu\":%.1f}", actualVolts, turbidity_ntu);
+    //Particle.publish("turbidity", turbidityData);
+
+    q_turb.push(turbidity_ntu);
     
     // Read GPS data if available
     if (GPS.newNMEAreceived()) {
