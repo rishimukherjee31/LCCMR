@@ -12,7 +12,7 @@
 
 #include <queue>
 
-#define DEFAULT_SAT_VOLTAGE_CONST (40.0*11.0)
+#define DEFAULT_SAT_VOLTAGE_CONST (42.0)
 
 const int SD_CS_PIN = D5;
 
@@ -57,6 +57,7 @@ PublishQueueAsync publishQueue(publishQueueRetainedBuffer, sizeof(publishQueueRe
 
 float ph = -1;
 float temperature = -1;
+float do_volts = -1;
 float dissolvedOxygen = -1;
 float turbidity = -1;
 float turbidity_ntu = -1;
@@ -64,6 +65,9 @@ float Vclear = 2.85; // Calibration constant for turbidity sensor
 float latitude = 0.0;  // Default GPS value
 float longitude = 0.0; // Default GPS value
 float ph_calibration = 15.509 + 9.0; // Calibration constant for pH sensor.
+float temp_calibration = -107;
+float do_calibration = 20.0; // Additional Voltage offset for the dissolved oxygen calibration process
+
 
 // Update the initializeSDCard function with better error reporting
 bool initializeSDCard() {
@@ -144,8 +148,6 @@ void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity, f
     }
     
     // Format: Date, Time, Latitude, Longitude, Temperature, pH, DO, Turbidity
-    dataFile.print(getFormattedDate());
-    dataFile.print(",");
     dataFile.print(getFormattedTime());
     dataFile.print(",");
     dataFile.print(lat, 6); // Latitude with 6 decimal places
@@ -260,6 +262,7 @@ bool sendData(int loopTime) {
         }
 
         publishQueue.publish("waterdata", msg, WITH_ACK); // This line publishes the message to the web console
+        Particle.publish("do volts", do_volts);
         delay(1000);
         RGB.control(false);
     }
@@ -281,26 +284,22 @@ void readSensors() {
     // Read temperature sensor (now analog on A1)
     float tempVolts = (analogRead(A1)/4095.0) * 3.3;
     
-    temperature = tempVolts * 100.0 - 107; // add or subtract calibration constant once values have settled
+    temperature = tempVolts * 100.0 + temp_calibration; // add or subtract calibration constant once values have settled
     q_t.push(temperature);
     
     // Read dissolved oxygen sensor on A2
-    float doVolts = analogRead(A2);// / 4095.0) * 3300.0 + 130;
+    do_volts = (analogRead(A2) / 4095.0) * 3300.0;
+    do_volts = (0.75*(do_volts/10.0)) + do_calibration;
     
-    Particle.publish("do volts", doVolts);
+    // For Atlas Scientific, typical saturation voltage is ~2000-2100mV
+    dissolvedOxygen = do_volts * 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
     
-    dissolvedOxygen = doVolts* 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
-    //Particle.publish("%d",dissolvedOxygen);
-
-    // Temperature compensation (DO decreases with increasing temperature)
-    float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
+    // Temperature compensation
+    // float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
+    // dissolvedOxygen = dissolvedOxygen * tempFactor;
     
-    
-    dissolvedOxygen = dissolvedOxygen * tempFactor;
-    
-    // Ensure reasonable bounds (typical range 0-20 mg/L)
     if (dissolvedOxygen < 0) dissolvedOxygen = 0;
-    //if (dissolvedOxygen > 25) dissolvedOxygen = 25;
+    if (dissolvedOxygen > 100.0) dissolvedOxygen = 100;
     
     q_do.push(dissolvedOxygen);
     
