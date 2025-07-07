@@ -64,10 +64,9 @@ float turbidity_ntu = -1;
 float Vclear = 2.85; // Calibration constant for turbidity sensor
 float latitude = 0.0;  // Default GPS value
 float longitude = 0.0; // Default GPS value
-float ph_calibration = 15.509 + 9.0; // Calibration constant for pH sensor.
+float ph_calibration = 15.509; // Calibration constant for pH sensor.
 float temp_calibration = -107;
 float do_calibration = 20.0; // Additional Voltage offset for the dissolved oxygen calibration process
-
 
 // Update the initializeSDCard function with better error reporting
 bool initializeSDCard() {
@@ -98,7 +97,7 @@ bool initializeSDCard() {
     
     // Write header if file is new (size 0) - using format from Excel file
     if (dataFile.fileSize() == 0) {
-        dataFile.println("Date,Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity");
+        dataFile.println("Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity");
     }
     dataFile.sync();
     dataFile.close();
@@ -120,26 +119,18 @@ String getFormattedDate() {
 
 // Function to get formatted time string from GPS
 String getFormattedTime() {
-    if (GPS.fix) {
-        char timeStr[9];
-        // Format: HH:MM:SS
-        sprintf(timeStr, "%02d:%02d:%02d", GPS.hour, GPS.minute, GPS.seconds);
-        return String(timeStr);
-    } else {
-        // Fallback using device time if no GPS fix
-        unsigned long totalSeconds = millis() / 1000;
-        int hours = (totalSeconds % 86400) / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
+    unsigned long totalSeconds = millis() / 1000;
+    int hours = (totalSeconds % 86400) / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
         
-        char timeStr[9];
-        sprintf(timeStr, "%02d:%02d:%02d", hours, minutes, seconds);
-        return String(timeStr);
-    }
+    char timeStr[9];
+    sprintf(timeStr, "%02d:%02d:%02d", hours, minutes, seconds);
+    return String(timeStr);
 }
 
 // Updated log function to match Excel format
-void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity, float lat, float lon) {
+void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity_ntu, float lat, float lon) {
     if (!sdCardInitialized) return;
     
     if (!dataFile.open("SENSOR_LOG.CSV", O_RDWR | O_CREAT | O_AT_END)) {
@@ -160,7 +151,7 @@ void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity, f
     dataFile.print(",");
     dataFile.print(dissolvedOxygen, 2);
     dataFile.print(",");
-    dataFile.println(turbidity, 2);
+    dataFile.println(turbidity_ntu, 2);
     
     // Make sure data is written to the file
     dataFile.sync();
@@ -262,7 +253,6 @@ bool sendData(int loopTime) {
         }
 
         publishQueue.publish("waterdata", msg, WITH_ACK); // This line publishes the message to the web console
-        //Particle.publish("do volts", do_volts);
         delay(1000);
         RGB.control(false);
     }
@@ -291,15 +281,18 @@ void readSensors() {
     do_volts = (analogRead(A2) / 4095.0) * 3300.0;
     do_volts = (0.75*(do_volts/10.0)) + do_calibration;
     
-    // For Atlas Scientific, typical saturation voltage is ~2000-2100mV
-    dissolvedOxygen = do_volts * 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
+    dissolvedOxygen = do_volts* 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
+    //Particle.publish("%d",dissolvedOxygen);
+
+    // Temperature compensation (DO decreases with increasing temperature)
+    float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
     
-    // Temperature compensation
-    // float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
-    // dissolvedOxygen = dissolvedOxygen * tempFactor;
     
+    dissolvedOxygen = dissolvedOxygen * tempFactor;
+    
+    // Ensure reasonable bounds (typical range 0-20 mg/L)
     if (dissolvedOxygen < 0) dissolvedOxygen = 0;
-    if (dissolvedOxygen > 100.0) dissolvedOxygen = 100;
+    if (dissolvedOxygen > 100) dissolvedOxygen = 100;
     
     q_do.push(dissolvedOxygen);
     
@@ -310,14 +303,14 @@ void readSensors() {
     float scaledVolts = actualVolts * (5.0 / 3.3);
     
     // DFRobot quadratic formula for NTU conversion
-    float turbidity_ntu = -1120.4 * scaledVolts * scaledVolts + 5742.3 * scaledVolts - 4352.9;
+    turbidity_ntu = -1120.4 * scaledVolts * scaledVolts + 5742.3 * scaledVolts - 4352.9;
     
     // Handle edge cases
     if (turbidity_ntu < 0) turbidity_ntu = 0;
     if (turbidity_ntu > 3000) turbidity_ntu = 3000;
     
     // Publish both values for monitoring
-    String turbidityData = String::format("{\"voltage\":%.2f,\"ntu\":%.1f}", actualVolts, turbidity_ntu);
+    //String turbidityData = String::format("{\"voltage\":%.2f,\"ntu\":%.1f}", actualVolts, turbidity_ntu);
     //Particle.publish("turbidity", turbidityData);
 
     q_turb.push(turbidity_ntu);
@@ -343,7 +336,7 @@ void readSensors() {
     
     // Log data to SD card
     if (sdCardInitialized) {
-        logDataToSD(temperature, ph, dissolvedOxygen, turbidity, latitude, longitude);
+        logDataToSD(temperature, ph, dissolvedOxygen, turbidity_ntu, latitude, longitude);
     }
 }
 
