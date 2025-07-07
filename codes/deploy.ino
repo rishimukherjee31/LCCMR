@@ -262,7 +262,7 @@ bool sendData(int loopTime) {
         }
 
         publishQueue.publish("waterdata", msg, WITH_ACK); // This line publishes the message to the web console
-        Particle.publish("do volts", do_volts);
+        //Particle.publish("do volts", do_volts);
         delay(1000);
         RGB.control(false);
     }
