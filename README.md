@@ -68,6 +68,8 @@ Auto-included by Particle IDE:
 - `PublishQueueAsyncRK`
 - `elapsedMillis`
 
+> If you are using the code for the first time, you will need to include these libraries manually. You will need to add these libraries using the tools provided by the Web IDE. These will automatically get added to your project once you make the right selections. 
+
 <br>
 
 ## LED Status on the Boron
@@ -76,11 +78,13 @@ Auto-included by Particle IDE:
 - **Green**: SD card initialized successfully
 - **Red**: SD card initialization failed
 
+> For the most part you will only see the green and blue lights on your Boron device. When the Boron initially powers up, the green light will blink until the device is able to connect to the net. Once that occurs, the LED onboard the device will change colors to blue. 
+
 <br>
 
 ## Data Output
 
-On the [Particle Console](https://console.particle.io/) you will see a water_data variable that contains the following data structure:
+On the [Particle Console](https://console.particle.io/) you will see a ```water_data``` variable that contains the following data structure:
 
 ```json
 {
@@ -94,6 +98,8 @@ On the [Particle Console](https://console.particle.io/) you will see a water_dat
   "timestamp": [112]
 }
 ```
+
+> This is not necessary for the SD card logging process, rather the console helps you see the data collected by the Boron to aid with troubleshooting. Whenever the Boron is bale to connect to the internet, you will be able to see that through the console. 
 
 <br>
 
