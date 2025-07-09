@@ -1,11 +1,17 @@
 # JAR JAR ROV Codes
 
 <div align="center">
-  <img src="./videos/jar jar.gif" alt="ROV Animation" width="600"/>
+  <img src="./videos/jar jar.gif" alt="ROV Animation" width="800"/>
+  <p><em>Jar Jar ROV</em></p>
 </div>
+<br>
+
+**Build Guides:**
+- [Electronics Assembly](electronics-build-guide.md)
+- [Sensor Pod Housing](sensor-pod-build-guide.md)
+- [Frame Construction](frame-build-guide.md)
 
 
-IoT water quality monitoring system for Particle Boron with multi-sensor data collection, GPS tracking, and cloud connectivity.
 
 ## Quick Start
 
@@ -25,10 +31,6 @@ cd water-quality-monitor
 - **Power**: 3600mAh LiPo + coin cell battery
 - **Housing**: 2" PVC waterproof enclosure
 
-**Build Guides:**
-- [Electronics Assembly](electronics-build-guide.md)
-- [Sensor Pod Housing](sensor-pod-build-guide.md)
-- [Frame Construction](frame-build-guide.md)
 
 ## Configuration
 
