@@ -130,8 +130,8 @@ The data extraction process should follow the following guidelines for the websi
 
 **Critical** - Do this immediately after retrieving the sensor pod from water:
 
-- Turn off the Boron device using the power button
-- Wait for all status LEDs to completely turn off
+- Turn off the Boron device using the switch
+- Wait for all LEDs to completely turn off
 - This step prevents data corruption during SD card removal
 - **Do not skip this step** - always power down first
 
