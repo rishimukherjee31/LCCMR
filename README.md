@@ -14,7 +14,7 @@
 3. [Setup & Variables](#setup--variables)
 4. [LED Status on the Boron](#led-status-on-the-boron)
 5. [Data Output](#data-output)
-6. [Sensor Data Extraction](#sensor-data-extraction)
+6. [Sensor Data Extraction & Upload](#sensor-data-extraction)
 7. [Troubleshooting](#troubleshooting)
 
 <br>
