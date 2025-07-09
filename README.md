@@ -10,7 +10,7 @@
 - [Sensor Pod Housing](sensor-pod-build-guide.md)
 - [Electronics Assembly](electronics-build-guide.md)
 - [Master Manual](https://docs.google.com/document/d/18Mj6dGt3YCFpkhXhR96WbZqG3Laaa05PJXKUIPMrM2g/edit?tab=t.0)
-- [Code File](https://github.com/rishimukherjee31/LCCMR)
+- [Code File](https://github.com/rishimukherjee31/LCCMR/blob/main/codes/deploy.ino)
 <br>
 
 
