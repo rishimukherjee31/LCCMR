@@ -17,9 +17,9 @@
 ## Quick Start
 
 
-The Sensor Pod usees a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The code in this github is written to run on Boron microcontrolers. Our main use case is to log water wuality data and GPS coordinates to an SD card using the Boron. 
+The Sensor Pod uses a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The code in this GitHub is written to run on Boron microcontrollers. Our main use case is to log water quality data and GPS coordinates to an SD card using the Boron. 
 
-Like most microntrollers, the Boron needs a firmware to run. We have prepared this firmware in ```deploy.ino``` that can be found in the ```/code``` directory. This file contains code written in C++. You will need to download or copy this code into the Web IDE. Type the following commands in your terminal:
+Like most microcontrollers, the Boron needs firmware to run. We have prepared this firmware in ```deploy.ino``` that can be found in the ```/code``` directory. This file contains code written in C++. You will need to download or copy this code into the Web IDE. Type the following commands in your terminal:
 
 <br>
 
@@ -36,14 +36,14 @@ ls
 <br>
 
 1. Flash the `./codes/deploy.ino` file to Particle Boron through the Web IDE
-2. Insert SD card into Adalogger
-4. Power on and monitor LED status, when the LED on the Boron flashes blue it is connected to the web. (You only need to monitor this once)
+2. Insert the SD card into Adalogger
+4. Power on and monitor the LED status. When the LED on the Boron flashes blue, it is connected to the web. (You only need to monitor this once)
 
 <br>
 
 ## Setup & Variables
 
-The following variables can be altered within the code depending on the need for it. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in miliseconds. 2000 ms is the default value and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
+The following variables can be modified within the code as needed. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in milliseconds. 2000 ms is the default value, and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code, it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
 
 <br>
 
@@ -78,7 +78,7 @@ Auto-included by Particle IDE:
 - **Green**: SD card initialized successfully
 - **Red**: SD card initialization failed
 
-> For the most part you will only see the green and blue lights on your Boron device. When the Boron initially powers up, the green light will blink until the device is able to connect to the net. Once that occurs, the LED onboard the device will change colors to blue. 
+> For the most part, you will only see the green and blue lights on your Boron device. When the Boron initially powers up, the green light will blink until the device can connect to the internet. Once that occurs, the LED onboard the device will change colors to blue. 
 
 <br>
 
@@ -118,7 +118,7 @@ Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
 
 ### Sensor Data Extraction
 
-The data extraction process should follow the following guidelined for the website to read the data reliably.
+The data extraction process should follow the following guidelines for the website to read the data reliably.
 
 <br>
 
@@ -188,6 +188,3 @@ Look for a row near the bottom where all the columns change at roughly the same 
 | Sensor readings off | Adjust calibration constants |
 | Housing leaks | Check PVC cement joints, ROV penetrators |
 
-## License
-
-MIT License
