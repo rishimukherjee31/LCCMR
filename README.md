@@ -134,6 +134,8 @@ The data extraction process should follow the following guidelined for the websi
 - Gently remove the SD card from the Featherboard in the middle
 - Insert the SD card into your card reader, then connect to your computer
 
+<br>
+
 <div align="center">
   <img src="./images/sensor-log.png" width="90%" alt="Sensor Log.csv">
   <p><em>Sensor Log file in the computer's filesystem</em></p>
