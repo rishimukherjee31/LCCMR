@@ -99,7 +99,7 @@ On the [Particle Console](https://console.particle.io/) you will see a ```water_
 }
 ```
 
-> This is not necessary for the SD card logging process, rather the console helps you see the data collected by the Boron to aid with troubleshooting. Whenever the Boron is bale to connect to the internet, you will be able to see that through the console. 
+> This is not necessary for the SD card logging process, rather the console helps you see the data collected by the Boron to aid with troubleshooting. Whenever the Boron is able to connect to the internet, you will be able to see that through the console. 
 
 <br>
 
