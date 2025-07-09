@@ -17,7 +17,8 @@
 
 ```bash
 git clone https://github.com/rishimukherjee31/LCCMR.git
-cd water-quality-monitor
+cd codes
+ls
 ```
 
 1. Flash the `./codes/deploy.ino` file to Particle Boron through the Web IDE
