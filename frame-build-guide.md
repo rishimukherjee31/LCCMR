@@ -61,11 +61,6 @@ The ROV has two main components to it: the electronics, the frame + thruster kit
     <td><img src="./images/1in-pipe.png" width="100" height="100" alt="1/2&quot;x10' PVC pipe"></td>
   </tr>
   <tr>
-    <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-2-in-x-2-ft-PVC-DWV-Schedule-40-Pipe-PVC072000200HA/100585960">2" PVC Pipe, 2 ft.</a></td>
-    <td align="center">1</td>
-    <td><img src="./images/4in-pipe.png" width="100" height="100" alt="2&quot; PVC Pipe"></td>
-  </tr>
-  <tr>
     <td><a href="https://www.homedepot.com/p/Charlotte-Pipe-1-2-in-PVC-Side-Outlet-90-Degree-S-x-S-x-S-Elbow-Fitting-PVC025100600HD/300335067">1/2" PVC 4-way Elbow</a></td>
     <td align="center">4</td>
     <td><img src="./images/4-way-elbow.png" width="100" height="100" alt="1/2&quot; PVC 4-way"></td>
