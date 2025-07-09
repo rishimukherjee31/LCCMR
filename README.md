@@ -25,12 +25,6 @@ ls
 2. Insert SD card into Adalogger
 4. Power on and monitor LED status, when the LED on the Boron flashes blue it is connected to the web. (You only need to monitor this once)
 
-## Hardware
-
-- **Particle Boron LTE** + Adafruit GPS + Adalogger Featherwings
-- **Sensors**: pH (A0), Temperature (A1), Dissolved Oxygen (A2), Turbidity (A3)
-- **Power**: 3600mAh LiPo + coin cell battery + TP4056 charging circuit + 6A switch
-
 
 ## Configuration
 
