@@ -5,7 +5,7 @@
 <br>
 <br>
 
-**Build Guides:**
+**Useful Links:**
 - [Frame Construction](frame-build-guide.md)
 - [Sensor Pod Housing](sensor-pod-build-guide.md)
 - [Electronics Assembly](electronics-build-guide.md)
@@ -16,7 +16,6 @@
 
 ## Quick Start
 
-<br>
 
 The Sensor Pod usees a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The code in this github is written to run on Boron microcontrolers. Our main use case is to log water wuality data and GPS coordinates to an SD card using the Boron. 
 
@@ -40,10 +39,9 @@ ls
 2. Insert SD card into Adalogger
 4. Power on and monitor LED status, when the LED on the Boron flashes blue it is connected to the web. (You only need to monitor this once)
 
-
-## Setup 
-
 <br>
+
+## Setup & Variables
 
 The following variables can be altered within the code depending on the need for it. ```RECORD_PERIOD``` is an ineger constant that specifies the resolution of samples logged in miliseconds. 2000 ms is the default value and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
 
@@ -62,15 +60,28 @@ float do_calibration = 20.0;
 
 <br>
 
+## Libraries
+
+Auto-included by Particle IDE:
+- `Adafruit_GPS`
+- `SdFat` 
+- `PublishQueueAsyncRK`
+- `elapsedMillis`
+
+<br>
+
+## LED Status on the Boron
+
+- **Blue**: Transmitting data/ Connected
+- **Green**: SD card initialized successfully
+- **Red**: SD card initialization failed
+
+<br>
+
 ## Data Output
 
-**SD Card (CSV):**
-```
-Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
-00:30:25,40.123456,-74.654321,22.5,7.2,8.4,12.3
-```
+On the [Particle Console](https://console.particle.io/) you will see a water_data variable that contains the following data structure:
 
-**Cloud (JSON):**
 ```json
 {
   "robotID": 0,
@@ -84,19 +95,81 @@ Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
 }
 ```
 
-## LED Status
+<br>
 
-- **Blue**: Transmitting data/ Connected
-- **Green**: SD card initialized successfully
-- **Red**: SD card initialization failed
+**SD Card (CSV):**
 
-## Libraries
+<br> 
 
-Auto-included by Particle IDE:
-- `Adafruit_GPS`
-- `SdFat` 
-- `PublishQueueAsyncRK`
-- `elapsedMillis`
+The columns in the CSV file are as follows:
+
+```
+Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
+00:30:25,40.123456,-74.654321,22.5,7.2,8.4,12.3
+```
+
+<br> 
+
+### Sensor Data Extraction
+
+The data extraction process should follow the following guidelined for the website to read the data reliably.
+
+<br>
+
+**Critical** - Do this immediately after retrieving the sensor pod from water:
+
+- Turn off the Boron device using the power button
+- Wait for all status LEDs to completely turn off
+- This step prevents data corruption during SD card removal
+- **Do not skip this step** - always power down first
+
+### Remove the SD Card
+
+- Gently remove the SD card from the Featherboard in the middle
+- Insert the SD card into your card reader, then connect to your computer
+
+<div align="center">
+  <img src="./images/sensor-log.png" width="90%" alt="Sensor Log.csv">
+  <p><em>Sensor Log file in the computer's filesystem</em></p>
+</div>
+
+<br>
+
+### Rename Data File and Data Cleanup
+
+For the website to properly read your file, you need to rename the file (`SENSOR_LOG.CSV`) using the following convention:
+
+```
+<Team name>_<Lake name>_<Date as mm-dd-yyyy>_<Time as hhmm 24h-hour>.csv
+```
+
+**Example:**
+```
+R2-H2O_Square-Lake_06-07-2025_1240.csv
+```
+
+Where:
+- **Team name:** R2-H2O
+- **Lake name:** Square-Lake  
+- **Date as mm-dd-yyyy:** 06-07-2025
+- **Time as hhmm 24-hour:** 1240
+
+<br>
+
+**Important naming rules:**
+- Use underscores (`_`) as spacers between categories only
+- Using dashes (`-`) is fine within a category such as Date
+- This naming convention is critical as the code relies on it to read uploaded data files reliably
+
+<br>
+
+### Data Cleanup
+
+Check your CSV file, specifically the bottom end of the file. If you can locate the row where you exited the water, remove all rows after that point in the CSV file. You are essentially cleaning up data that is inaccurate and doesn't reflect the testing environment.
+
+Look for a row near the bottom where all the columns change at roughly the same time - this is probably the point where the sensor pod left the water. If you are unable to locate this point, upload the data as is.
+
+<br>
 
 ## Troubleshooting
 
