@@ -43,7 +43,7 @@ ls
 
 ## Setup & Variables
 
-The following variables can be altered within the code depending on the need for it. ```RECORD_PERIOD``` is an ineger constant that specifies the resolution of samples logged in miliseconds. 2000 ms is the default value and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
+The following variables can be altered within the code depending on the need for it. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in miliseconds. 2000 ms is the default value and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
 
 <br>
 
