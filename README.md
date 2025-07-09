@@ -1,7 +1,7 @@
 # JAR JAR ROV Codes
 
 <div align="center">
-  <img src="./videos/jar%20jar.gif" alt="ROV Animation" width="400"/>
+  <img src="./videos/jar jar.gif" alt="ROV Animation" width="400"/>
 </div>
 
 
