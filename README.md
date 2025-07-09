@@ -9,6 +9,7 @@
 - [Frame Construction](frame-build-guide.md)
 - [Sensor Pod Housing](sensor-pod-build-guide.md)
 - [Electronics Assembly](electronics-build-guide.md)
+- [Master Manual](https://docs.google.com/document/d/18Mj6dGt3YCFpkhXhR96WbZqG3Laaa05PJXKUIPMrM2g/edit?tab=t.0)
 
 <br>
 
@@ -40,7 +41,13 @@ ls
 4. Power on and monitor LED status, when the LED on the Boron flashes blue it is connected to the web. (You only need to monitor this once)
 
 
-## Configuration
+## Setup 
+
+<br>
+
+The following variables can be altered within the code depending on the need for it. ```RECORD_PERIOD``` is an ineger constant that specifies the resolution of samples logged in miliseconds. 2000 ms is the default value and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
+
+<br>
 
 ```cpp
 int RECORD_PERIOD = 2000;        // Sensor reading interval (ms)
@@ -52,6 +59,8 @@ float ph_calibration = 15.509;
 float temp_calibration = -107;
 float do_calibration = 20.0;
 ```
+
+<br>
 
 ## Data Output
 
