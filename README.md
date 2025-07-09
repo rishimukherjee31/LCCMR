@@ -41,6 +41,18 @@ ls
 
 <br>
 
+## Libraries
+
+Auto-included by Particle IDE:
+- `Adafruit_GPS`
+- `SdFat` 
+- `PublishQueueAsyncRK`
+- `elapsedMillis`
+
+> If you are using the code for the first time, you will need to include these libraries manually. You will need to add these libraries using the tools provided by the Web IDE. These will automatically get added to your project once you make the right selections. 
+
+<br>
+
 ## Setup & Variables
 
 The following variables can be modified within the code as needed. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in milliseconds. 2000 ms is the default value, and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code, it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
@@ -60,17 +72,6 @@ float do_calibration = 20.0;
 
 <br>
 
-## Libraries
-
-Auto-included by Particle IDE:
-- `Adafruit_GPS`
-- `SdFat` 
-- `PublishQueueAsyncRK`
-- `elapsedMillis`
-
-> If you are using the code for the first time, you will need to include these libraries manually. You will need to add these libraries using the tools provided by the Web IDE. These will automatically get added to your project once you make the right selections. 
-
-<br>
 
 ## LED Status on the Boron
 
