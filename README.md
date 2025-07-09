@@ -16,7 +16,7 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/yourusername/water-quality-monitor.git
+git clone https://github.com/rishimukherjee31/LCCMR.git
 cd water-quality-monitor
 ```
 
@@ -28,8 +28,7 @@ cd water-quality-monitor
 
 - **Particle Boron LTE** + Adafruit GPS + Adalogger Featherwings
 - **Sensors**: pH (A0), Temperature (A1), Dissolved Oxygen (A2), Turbidity (A3)
-- **Power**: 3600mAh LiPo + coin cell battery
-- **Housing**: 2" PVC waterproof enclosure
+- **Power**: 3600mAh LiPo + coin cell battery + TP4056 charging circuit + 6A switch
 
 
 ## Configuration
@@ -50,21 +49,26 @@ float do_calibration = 20.0;
 **SD Card (CSV):**
 ```
 Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
-14:30:25,40.123456,-74.654321,22.5,7.2,8.4,12.3
+00:30:25,40.123456,-74.654321,22.5,7.2,8.4,12.3
 ```
 
 **Cloud (JSON):**
 ```json
 {
   "robotID": 0,
-  "tmp": [22.5], "ph": [7.2], "do": [8.4], "turb": [12.3],
-  "lat": [40.123456], "lon": [-74.654321], "timestamp": [1647347425]
+  "tmp": [22.5],
+  "ph": [7.2],
+  "do": [8.4],
+  "turb": [12.3],
+  "lat": [40.123456],
+  "lon": [-74.654321],
+  "timestamp": [112]
 }
 ```
 
 ## LED Status
 
-- **Blue**: Transmitting data
+- **Blue**: Transmitting data/ Connected
 - **Green**: SD card initialized successfully
 - **Red**: SD card initialization failed
 
