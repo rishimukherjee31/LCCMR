@@ -1,18 +1,23 @@
+[Frame Construction](frame-build-guide.md) | [Sensor Pod Housing](sensor-pod-build-guide.md) | [Electronics Assembly](electronics-build-guide.md) | [Master Manual](https://docs.google.com/document/d/18Mj6dGt3YCFpkhXhR96WbZqG3Laaa05PJXKUIPMrM2g/edit?tab=t.0) | [Code File](https://github.com/rishimukherjee31/LCCMR/blob/main/codes/deploy.ino)
+
 <div align="center">
-  <img src="./videos/jar jar.gif" alt="ROV Animation" width="800"/>
+  <img src="./videos/jar jar.gif" alt="ROV Animation" width="1005"/>
   <p><em>Jar Jar ROV</em></p>
 </div>
 <br>
 <br>
 
-**Useful Links:**
-- [Frame Construction](frame-build-guide.md)
-- [Sensor Pod Housing](sensor-pod-build-guide.md)
-- [Electronics Assembly](electronics-build-guide.md)
-- [Master Manual](https://docs.google.com/document/d/18Mj6dGt3YCFpkhXhR96WbZqG3Laaa05PJXKUIPMrM2g/edit?tab=t.0)
-- [Code File](https://github.com/rishimukherjee31/LCCMR/blob/main/codes/deploy.ino)
-<br>
 
+## Table of Contents
+1. [Quick Start](#quick-start)
+2. [Libraries](#libraries)
+3. [Setup & Variables](#setup--variables)
+4. [LED Status on the Boron](#led-status-on-the-boron)
+5. [Data Output](#data-output)
+6. [Sensor Data Extraction](#sensor-data-extraction)
+7. [Troubleshooting](#troubleshooting)
+
+<br>
 
 ## Quick Start
 
