@@ -1,7 +1,7 @@
 # JAR JAR ROV Codes
 
 <div align="center">
-  <img src="./videos/jar jar.gif" alt="ROV Animation" width="400"/>
+  <img src="./videos/jar jar.gif" alt="ROV Animation" width="600"/>
 </div>
 
 
@@ -14,16 +14,15 @@ git clone https://github.com/yourusername/water-quality-monitor.git
 cd water-quality-monitor
 ```
 
-1. Flash `.ino` file to Particle Boron
+1. Flash the `./codes/deploy.ino` file to Particle Boron through the Web IDE
 2. Insert SD card into Adalogger
-3. Connect sensors to analog pins A0-A3
-4. Power on and monitor LED status
+4. Power on and monitor LED status, when the LED on the Boron flashes blue it is connected to the web. (You only need to monitor this once)
 
 ## Hardware
 
 - **Particle Boron LTE** + Adafruit GPS + Adalogger Featherwings
 - **Sensors**: pH (A0), Temperature (A1), Dissolved Oxygen (A2), Turbidity (A3)
-- **Power**: 2000mAh LiPo + coin cell battery
+- **Power**: 3600mAh LiPo + coin cell battery
 - **Housing**: 2" PVC waterproof enclosure
 
 **Build Guides:**
