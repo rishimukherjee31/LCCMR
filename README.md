@@ -5,9 +5,11 @@
 <br>
 
 **Build Guides:**
-- [Electronics Assembly](electronics-build-guide.md)
-- [Sensor Pod Housing](sensor-pod-build-guide.md)
 - [Frame Construction](frame-build-guide.md)
+- [Sensor Pod Housing](sensor-pod-build-guide.md)
+- [Electronics Assembly](electronics-build-guide.md)
+
+
 
 
 
