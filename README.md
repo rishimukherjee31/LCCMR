@@ -22,7 +22,7 @@
 ## Quick Start
 
 
-The Sensor Pod uses a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The code in this GitHub is written to run on Boron microcontrollers. Our main use case is to log water quality data and GPS coordinates to an SD card using the Boron. 
+The Sensor Pod uses a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The [code](https://github.com/rishimukherjee31/LCCMR/blob/main/codes/deploy.ino) in this GitHub is written to run on Boron microcontrollers. Our main use case is to log water quality data and GPS coordinates to an SD card using the Boron. 
 
 Like most microcontrollers, the Boron needs firmware to run. We have prepared this firmware in ```deploy.ino``` that can be found in the ```/code``` directory. This file contains code written in C++. You will need to download or copy this code into the Web IDE. Type the following commands in your terminal:
 
