@@ -3,23 +3,37 @@
   <p><em>Jar Jar ROV</em></p>
 </div>
 <br>
+<br>
 
 **Build Guides:**
 - [Frame Construction](frame-build-guide.md)
 - [Sensor Pod Housing](sensor-pod-build-guide.md)
 - [Electronics Assembly](electronics-build-guide.md)
 
-
-
+<br>
 
 
 ## Quick Start
+
+<br>
+
+The Sensor Pod usees a [Particle Boron Microcontroller](https://store.particle.io/products/boron-lte-cat-m1-noram-with-ethersim-4th-gen?srsltid=AfmBOorGyjtaKMBeFM4IDkFqGIA-umYWDAvHu_w6I5nC4h2ciwpgvu81). To program this device, we use the [Particle Web IDE](https://build.particle.io/build/new). The code in this github is written to run on Boron microcontrolers. Our main use case is to log water wuality data and GPS coordinates to an SD card using the Boron. 
+
+Like most microntrollers, the Boron needs a firmware to run. We have prepared this firmware in ```deploy.ino``` that can be found in the ```/code``` directory. This file contains code written in C++. You will need to download or copy this code into the Web IDE. Type the following commands in your terminal:
+
+<br>
+
+> This will 'clone' or download this repository to your machine. You can then navigate to the codes folder to access the firmware.
+
+<br>
 
 ```bash
 git clone https://github.com/rishimukherjee31/LCCMR.git
 cd codes
 ls
 ```
+
+<br>
 
 1. Flash the `./codes/deploy.ino` file to Particle Boron through the Web IDE
 2. Insert SD card into Adalogger
