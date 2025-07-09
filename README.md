@@ -55,7 +55,7 @@ Auto-included by Particle IDE:
 
 ## Setup & Variables
 
-The following variables can be modified within the code as needed. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in milliseconds. 2000 ms is the default value, and it records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code, it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
+The following variables can be modified within the code as needed. ```RECORD_PERIOD``` is an integer constant that specifies the resolution of samples logged in milliseconds. The default value is 2000 ms, which records a sample every 2 seconds. ```SEND_PERIOD``` is the time before a message is sent to the website. In our code, it is 10 seconds. The calibration constants can be adjusted based on the readings and the expected values. The Turbidity and Dissolved Oxygen sensors don't need to be calibrated. 
 
 <br>
 
@@ -100,7 +100,7 @@ On the [Particle Console](https://console.particle.io/) you will see a ```water_
 }
 ```
 
-> This is not necessary for the SD card logging process, rather the console helps you see the data collected by the Boron to aid with troubleshooting. Whenever the Boron is able to connect to the internet, you will be able to see that through the console. 
+> This is not necessary for the SD card logging process; rather, the console helps you see the data collected by the Boron to aid with troubleshooting. Whenever the Boron can connect to the internet, you will be able to see that through the console. 
 
 <br>
 
@@ -111,8 +111,8 @@ On the [Particle Console](https://console.particle.io/) you will see a ```water_
 The columns in the CSV file are as follows:
 
 ```
-Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity
-00:30:25,40.123456,-74.654321,22.5,7.2,8.4,12.3
+Time,      Latitude,   Longitude,   Temperature,   pH,   Dissolved Oxygen,   Turbidity
+00:30:25,  40.123456,  -74.654321,  22.5,          7.2,  8.4,                12.3
 ```
 
 <br> 
