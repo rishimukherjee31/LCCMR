@@ -94,14 +94,14 @@ On the [Particle Console](https://console.particle.io/) you will see a ```water_
 
 ```json
 {
-  "robotID": 0,         ID of the Robot
-  "tmp": [22.5],        Temperature in C
-  "ph": [7.2],          pH
-  "do": [8.4],          Dissolved Oxygen as a Percentage
-  "turb": [12.3],       Turbidity in NTU
-  "lat": [40.123456],   Lattitude
-  "lon": [-74.654321],  Longitude
-  "timestamp": [112]    Time in seconds
+  "robotID": 0,        
+  "tmp": [22.5],        
+  "ph": [7.2],          
+  "do": [8.4],          
+  "turb": [12.3],       
+  "lat": [40.123456],  
+  "lon": [-74.654321],  
+  "timestamp": [112]   
 }
 ```
 
