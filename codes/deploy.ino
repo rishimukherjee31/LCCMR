@@ -99,7 +99,7 @@ bool initializeSDCard() {
     
     // Write header if file is new (size 0) - using format from Excel file
     if (dataFile.fileSize() == 0) {
-        dataFile.println("Date,Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity");
+        dataFile.println("Time,Latitude,Longitude,Temperature,pH,DissolvedOxygen,Turbidity");
     }
     dataFile.sync();
     dataFile.close();
