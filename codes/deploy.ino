@@ -154,7 +154,7 @@ void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity, f
     dataFile.print(",");
     dataFile.print(dissolvedOxygen, 2);
     dataFile.print(",");
-    dataFile.println(turbidity, 2);
+    dataFile.println(turbidity_ntu, 2);
     
     // Make sure data is written to the file
     dataFile.sync();
