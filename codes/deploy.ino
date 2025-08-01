@@ -133,7 +133,7 @@ String getFormattedTime() {
 }
 
 // Updated log function to match Excel format
-void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity, float lat, float lon) {
+void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity_ntu, float lat, float lon) {
     if (!sdCardInitialized) return;
     
     if (!dataFile.open("SENSOR_LOG.CSV", O_RDWR | O_CREAT | O_AT_END)) {
@@ -337,7 +337,7 @@ void readSensors() {
     
     // Log data to SD card
     if (sdCardInitialized) {
-        logDataToSD(temperature, ph, dissolvedOxygen, turbidity, latitude, longitude);
+        logDataToSD(temperature, ph, dissolvedOxygen, turbidity_ntu, latitude, longitude);
     }
 }
 
