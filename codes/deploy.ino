@@ -121,22 +121,15 @@ String getFormattedDate() {
 
 // Function to get formatted time string from GPS
 String getFormattedTime() {
-    if (GPS.fix) {
-        char timeStr[9];
-        // Format: HH:MM:SS
-        sprintf(timeStr, "%02d:%02d:%02d", GPS.hour, GPS.minute, GPS.seconds);
-        return String(timeStr);
-    } else {
-        // Fallback using device time if no GPS fix
-        unsigned long totalSeconds = millis() / 1000;
-        int hours = (totalSeconds % 86400) / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
+    // Fallback using device time if no GPS fix
+    unsigned long totalSeconds = millis() / 1000;
+    int hours = (totalSeconds % 86400) / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
         
-        char timeStr[9];
-        sprintf(timeStr, "%02d:%02d:%02d", hours, minutes, seconds);
-        return String(timeStr);
-    }
+    char timeStr[9];
+    sprintf(timeStr, "%02d:%02d:%02d", hours, minutes, seconds);
+    return String(timeStr);
 }
 
 // Updated log function to match Excel format
