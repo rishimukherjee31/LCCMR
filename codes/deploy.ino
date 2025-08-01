@@ -304,7 +304,7 @@ void readSensors() {
     float scaledVolts = actualVolts * (5.0 / 3.3);
     
     // DFRobot quadratic formula for NTU conversion
-    float turbidity_ntu = -1120.4 * scaledVolts * scaledVolts + 5742.3 * scaledVolts - 4352.9;
+    turbidity_ntu = -1120.4 * scaledVolts * scaledVolts + 5742.3 * scaledVolts - 4352.9;
     
     // Handle edge cases
     if (turbidity_ntu < 0) turbidity_ntu = 0;
