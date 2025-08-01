@@ -14,7 +14,7 @@
 
 #include <queue>
 
-#define DEFAULT_SAT_VOLTAGE_CONST (38.0)
+#define DEFAULT_SAT_VOLTAGE_CONST (42.0)
 
 const int SD_CS_PIN = D5;
 
