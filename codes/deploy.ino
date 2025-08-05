@@ -1,5 +1,5 @@
 //Revision 8/04/2025 Last version 8/01/2025
-//Contact mukhe100@umn.edu for assistance.
+//Contact mukhe100@umn.edu for questions about the code.
 
 // This #include statement was automatically added by the Particle IDE.
 #include <elapsedMillis.h>
