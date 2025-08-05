@@ -1,4 +1,4 @@
-//Revision 8/01/2025
+//Revision 8/04/2025 Last version 8/01/2025
 
 // This #include statement was automatically added by the Particle IDE.
 #include <elapsedMillis.h>
@@ -14,7 +14,8 @@
 
 #include <queue>
 
-#define DEFAULT_SAT_VOLTAGE_CONST (42.0)
+//This value can be 38.0 or 42.0 To calibrate it in air, the DO value should be 100. It may take over 10 minutes to settle on a value.
+#define DEFAULT_SAT_VOLTAGE_CONST (42.0)  
 
 const int SD_CS_PIN = D5;
 
@@ -61,7 +62,6 @@ float ph = -1;
 float temperature = -1;
 float do_volts = -1;
 float dissolvedOxygen = -1;
-float turbidity = -1;
 float turbidity_ntu = -1;
 float latitude = 0.0;  // Default GPS value
 float longitude = 0.0; // Default GPS value
@@ -141,7 +141,7 @@ void logDataToSD(float temp, float ph, float dissolvedOxygen, float turbidity_nt
         return;
     }
     
-    // Format: Date, Time, Latitude, Longitude, Temperature, pH, DO, Turbidity
+    // Format: Time, Latitude, Longitude, Temperature, pH, DO, Turbidity
     dataFile.print(getFormattedTime());
     dataFile.print(",");
     dataFile.print(lat, 6); // Latitude with 6 decimal places
@@ -256,7 +256,7 @@ bool sendData(int loopTime) {
         }
 
         publishQueue.publish("waterdata", msg, WITH_ACK); // This line publishes the message to the web console
-        // Particle.publish("do volts", do_volts);
+        // Particle.publish("do volts", do_volts); // Debugging Code
         delay(1000);
         RGB.control(false);
     }
@@ -288,7 +288,7 @@ void readSensors() {
     // For Atlas Scientific, typical saturation voltage is ~2000-2100mV
     dissolvedOxygen = do_volts * 100.0 / DEFAULT_SAT_VOLTAGE_CONST;
     
-    // Temperature compensation
+    // Temperature compensation ignored for our use case
     // float tempFactor = 1.0 - (0.02 * (temperature - 20.0));
     // dissolvedOxygen = dissolvedOxygen * tempFactor;
     
