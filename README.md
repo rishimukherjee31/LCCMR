@@ -70,8 +70,8 @@ int SEND_PERIOD = 10000;         // Data transmission interval (ms)
 int MAX_DATA_PER_PACKET = 10;    // Max readings per transmission
 
 // Calibration constants
-float ph_calibration = 15.509;
-float temp_calibration = -107;
+float ph_calibration = 15.509; // add or subtract as needed, e.g., if pH measured = 14, but pH strips show 7, subtract 7 from 'ph_calibration'
+float temp_calibration = -107; // similar to pH, add or subtract an offset based on the difference between console output and a thermometer. 
 float do_calibration = 20.0;
 ```
 
