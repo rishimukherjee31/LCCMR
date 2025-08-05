@@ -82,7 +82,6 @@ float do_calibration = 20.0;
 
 - **Blue**: Transmitting data/ Connected
 - **Green**: SD card initialized successfully
-- **Red**: SD card initialization failed
 
 > For the most part, you will only see the green and blue lights on your Boron device. When the Boron initially powers up, the green light will blink until the device can connect to the internet. Once that occurs, the LED onboard the device will change colors to blue. 
 
