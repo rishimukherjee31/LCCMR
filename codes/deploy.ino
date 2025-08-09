@@ -67,7 +67,7 @@ float turbidity_ntu = -1;
 float latitude = 0.0;  // Default GPS value
 float longitude = 0.0; // Default GPS value
 float ph_calibration = 15.509; // Calibration constant for pH sensor.
-float temp_calibration = -107; // Clibration Constant for temperature adjustment.
+float temp_calibration = -107; // Calibration Constant for temperature adjustment.
 float do_calibration = 20.0; // Additional Voltage offset for the dissolved oxygen calibration process.
 
 
